@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="./">
+    <title>CMOS 图像传感器设计与制造教程</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/highlight.css">
+    <script src="assets/script.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']],
+                processEscapes: false,
+                packages: {'[+]': ['noerrors', 'ams']}
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            },
+            loader: {
+                load: ['[tex]/noerrors', '[tex]/ams']
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h3>目录</h3>
+                <button id="sidebar-toggle" class="sidebar-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="sidebar-search">
+                <input type="text" id="sidebar-search-input" placeholder="搜索..." autocomplete="off">
+            </div>
+            <div id="tree-container">
+                <nav class="tree-nav" role="tree">
+                    <div class="tree-item active" >
+                        <a href="index.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">CMOS 图像传感器设计与制造教程</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter1.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第1章：半导体物理与光电效应</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter2.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第2章：MOS器件物理与CMOS工艺</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter3.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第3章：光电二极管与像素理论</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter4.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第4章：像素架构演进</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter5.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第5章：读出电路设计</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter6.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第6章：时序控制与接口电路</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter7.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第7章：噪声分析与优化</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter8.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第8章：图像质量优化</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter9.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第9章：功耗与性能优化</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter10.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第10章：专用传感器设计</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter11.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第11章：片上图像信号处理</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter12.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第12章：制造工艺与良率</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter13.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第13章：传感器表征与测试</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter14.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第14章：系统集成与调试</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="chapter15.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">第15章：案例研究与未来趋势</span>
+                        </a>
+                    </div>
+                
+                    <div class="tree-item " >
+                        <a href="CLAUDE.html" class="tree-link">
+                            <span class="tree-icon">📄</span>
+                            <span class="tree-title">Untitled</span>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+        
+        <main class="content">
+            <article>
+                <h1 id="cmos">CMOS 图像传感器设计与制造教程</h1>
+<h2 id="_1">关于本教程</h2>
+<p>本教程为资深程序员和AI科学家编写，系统介绍CMOS图像传感器从基础理论到工程实践的完整知识体系。每章包含大量习题和实践案例，帮助读者深入理解并掌握CMOS传感器的设计与制造技术。</p>
+<h2 id="_2">目标读者</h2>
+<ul>
+<li>具有编程和算法背景的工程师</li>
+<li>希望了解图像传感器底层原理的AI研究者</li>
+<li>从事计算机视觉和图像处理的技术人员</li>
+<li>对半导体器件设计感兴趣的开发者</li>
+</ul>
+<h2 id="_3">如何使用本教程</h2>
+<ol>
+<li><strong>循序渐进</strong>：章节安排从理论基础逐步过渡到实际应用</li>
+<li><strong>动手实践</strong>：每章配有6-8道练习题，建议全部完成</li>
+<li><strong>深入思考</strong>：注意"常见陷阱"和"最佳实践"部分</li>
+<li><strong>查漏补缺</strong>：利用折叠答案进行自我检验</li>
+</ol>
+<hr />
+<h2 id="_4">第一部分：理论基础</h2>
+<h3 id="1"><a href="chapter1.html">第1章：半导体物理与光电效应</a></h3>
+<p><strong>学习目标</strong>：理解CMOS传感器的物理基础</p>
+<ul>
+<li>半导体基础知识回顾</li>
+<li>PN结与耗尽区</li>
+<li>光电效应与光生载流子</li>
+<li>硅材料的光学特性</li>
+<li>量子效率与光谱响应</li>
+<li>噪声源分析（热噪声、散粒噪声、1/f噪声）</li>
+</ul>
+<h3 id="2moscmos"><a href="chapter2.html">第2章：MOS器件物理与CMOS工艺</a></h3>
+<p><strong>学习目标</strong>：掌握CMOS工艺基础和器件特性</p>
+<ul>
+<li>MOS电容与阈值电压</li>
+<li>MOSFET工作原理</li>
+<li>CMOS工艺流程概述</li>
+<li>器件缩放理论</li>
+<li>寄生效应与二级效应</li>
+<li>工艺偏差与匹配</li>
+</ul>
+<h3 id="3"><a href="chapter3.html">第3章：光电二极管与像素理论</a></h3>
+<p><strong>学习目标</strong>：深入理解像素的核心组件</p>
+<ul>
+<li>光电二极管类型（PN、PIN、APD）</li>
+<li>钳位光电二极管（PPD）原理</li>
+<li>电荷收集机制</li>
+<li>满阱容量与动态范围</li>
+<li>串扰机制（光学、电学）</li>
+<li>像素缩放挑战</li>
+</ul>
+<hr />
+<h2 id="_5">第二部分：电路设计</h2>
+<h3 id="4"><a href="chapter4.html">第4章：像素架构演进</a></h3>
+<p><strong>学习目标</strong>：掌握各种像素架构的优缺点</p>
+<ul>
+<li>无源像素（PPS）</li>
+<li>3T有源像素</li>
+<li>4T像素与相关双采样</li>
+<li>共享像素架构</li>
+<li>全局快门像素</li>
+<li>特殊像素设计（HDR、ToF）</li>
+</ul>
+<h3 id="5"><a href="chapter5.html">第5章：读出电路设计</a></h3>
+<p><strong>学习目标</strong>：理解信号读出链路设计</p>
+<ul>
+<li>源跟随器与列放大器</li>
+<li>相关双采样（CDS）电路</li>
+<li>列并行ADC架构</li>
+<li>斜坡ADC设计</li>
+<li>逐次逼近ADC</li>
+<li>Σ-Δ ADC在CMOS传感器中的应用</li>
+</ul>
+<h3 id="6"><a href="chapter6.html">第6章：时序控制与接口电路</a></h3>
+<p><strong>学习目标</strong>：掌握传感器控制系统设计</p>
+<ul>
+<li>行列扫描电路</li>
+<li>时序生成器设计</li>
+<li>电源管理与偏置电路</li>
+<li>高速接口（MIPI、LVDS）</li>
+<li>片上时钟生成（PLL/DLL）</li>
+<li>测试模式与可测性设计</li>
+</ul>
+<hr />
+<h2 id="_6">第三部分：系统优化</h2>
+<h3 id="7"><a href="chapter7.html">第7章：噪声分析与优化</a></h3>
+<p><strong>学习目标</strong>：系统理解和优化传感器噪声</p>
+<ul>
+<li>噪声建模与分析方法</li>
+<li>时域噪声与空间噪声</li>
+<li>固定模式噪声（FPN）抑制</li>
+<li>随机电报噪声（RTN）</li>
+<li>低噪声设计技术</li>
+<li>噪声测量与表征</li>
+</ul>
+<h3 id="8"><a href="chapter8.html">第8章：图像质量优化</a></h3>
+<p><strong>学习目标</strong>：提升传感器成像质量</p>
+<ul>
+<li>调制传递函数（MTF）</li>
+<li>色彩滤波阵列（CFA）设计</li>
+<li>微透镜优化</li>
+<li>光学黑电平校准</li>
+<li>非均匀性校正</li>
+<li>坏点检测与修复</li>
+</ul>
+<h3 id="9"><a href="chapter9.html">第9章：功耗与性能优化</a></h3>
+<p><strong>学习目标</strong>：平衡功耗与性能的设计权衡</p>
+<ul>
+<li>功耗分析与建模</li>
+<li>低功耗设计技术</li>
+<li>帧率与功耗权衡</li>
+<li>动态电源管理</li>
+<li>片上处理与系统功耗</li>
+<li>热管理考虑</li>
+</ul>
+<hr />
+<h2 id="_7">第四部分：先进技术</h2>
+<h3 id="10"><a href="chapter10.html">第10章：专用传感器设计</a></h3>
+<p><strong>学习目标</strong>：了解特殊应用的传感器设计</p>
+<ul>
+<li>高动态范围（HDR）成像</li>
+<li>时间飞行（ToF）传感器</li>
+<li>偏振传感器</li>
+<li>多光谱成像</li>
+<li>事件驱动传感器（DVS）</li>
+<li>3D堆叠技术</li>
+</ul>
+<h3 id="11"><a href="chapter11.html">第11章：片上图像信号处理</a></h3>
+<p><strong>学习目标</strong>：集成ISP功能到传感器</p>
+<ul>
+<li>片上ADC与数字处理</li>
+<li>实时去噪算法</li>
+<li>自动曝光与增益控制</li>
+<li>片上HDR合成</li>
+<li>压缩感知技术</li>
+<li>AI加速器集成</li>
+</ul>
+<h3 id="12"><a href="chapter12.html">第12章：制造工艺与良率</a></h3>
+<p><strong>学习目标</strong>：理解量产相关的工艺挑战</p>
+<ul>
+<li>CMOS图像传感器工艺流程</li>
+<li>背照式（BSI）工艺</li>
+<li>彩色滤光片与微透镜制造</li>
+<li>晶圆级封装</li>
+<li>良率分析与优化</li>
+<li>可靠性测试</li>
+</ul>
+<hr />
+<h2 id="_8">第五部分：实践应用</h2>
+<h3 id="13"><a href="chapter13.html">第13章：传感器表征与测试</a></h3>
+<p><strong>学习目标</strong>：掌握传感器测试方法</p>
+<ul>
+<li>测试环境搭建</li>
+<li>电光转换函数（OECF）</li>
+<li>噪声测量方法</li>
+<li>动态范围测试</li>
+<li>色彩表征</li>
+<li>自动测试系统设计</li>
+</ul>
+<h3 id="14"><a href="chapter14.html">第14章：系统集成与调试</a></h3>
+<p><strong>学习目标</strong>：实现传感器系统集成</p>
+<ul>
+<li>驱动开发要点</li>
+<li>ISP调优流程</li>
+<li>系统级优化</li>
+<li>常见问题诊断</li>
+<li>性能基准测试</li>
+<li>产品化考虑</li>
+</ul>
+<h3 id="15"><a href="chapter15.html">第15章：案例研究与未来趋势</a></h3>
+<p><strong>学习目标</strong>：了解产业现状与发展方向</p>
+<ul>
+<li>手机摄像头传感器演进</li>
+<li>汽车视觉传感器要求</li>
+<li>安防监控应用</li>
+<li>医疗成像传感器</li>
+<li>计算成像新范式</li>
+<li>未来技术展望</li>
+</ul>
+<hr />
+<h2 id="_9">附录</h2>
+<h3 id="a"><a href="appendix_a.html">附录A：常用公式与参数表</a></h3>
+<ul>
+<li>光学常数</li>
+<li>半导体参数</li>
+<li>噪声公式汇总</li>
+<li>单位换算</li>
+</ul>
+<h3 id="bmatlabpython"><a href="appendix_b.html">附录B：MATLAB/Python仿真代码</a></h3>
+<ul>
+<li>像素响应仿真</li>
+<li>噪声模型仿真</li>
+<li>MTF计算工具</li>
+<li>图像质量评估</li>
+</ul>
+<h3 id="c"><a href="appendix_c.html">附录C：参考文献与拓展阅读</a></h3>
+<ul>
+<li>经典教材</li>
+<li>重要论文</li>
+<li>行业标准</li>
+<li>在线资源</li>
+</ul>
+<hr />
+<h2 id="_10">学习路径建议</h2>
+<h3 id="2-3">快速入门路径（2-3周）</h3>
+<ul>
+<li>第1章（物理基础）→ 第4章（像素架构）→ 第7章（噪声）→ 第13章（测试）</li>
+</ul>
+<h3 id="4-6">电路设计路径（4-6周）</h3>
+<ul>
+<li>第2章（MOS器件）→ 第4-6章（电路设计）→ 第9章（优化）→ 第14章（集成）</li>
+</ul>
+<h3 id="6-8">系统工程路径（6-8周）</h3>
+<ul>
+<li>完整学习所有章节，重点关注第8-12章的系统级内容</li>
+</ul>
+<h3 id="3-4">应用开发路径（3-4周）</h3>
+<ul>
+<li>第3章（像素理论）→ 第8章（图像质量）→ 第11章（ISP）→ 第13-14章（实践）</li>
+</ul>
+<hr />
+<p><strong>开始学习</strong>: <a href="chapter1.html">第1章：半导体物理与光电效应 →</a></p>
+            </article>
+            
+            <nav class="page-nav"><a href="chapter1.html" class="nav-link next">第1章：半导体物理与光电效应 →</a></nav>
+        </main>
+    </div>
+</body>
+</html>
